@@ -1,62 +1,494 @@
-"OBJECT ORIENTED PROGRAMMING :1. Programming Paradigm ( types : functional/Procedural , OOP )2. What is OOPS3. Need of OOPS4. What is Functional/Procedural prog ?5. Pillars/features of oops6. What is Class ?7. What are Objects ?8. Access specifiers9. Polymorphism10.Overloading (Function , Operator)11. Overriding12.Virtual (Vtable , Vptr)13.constructor14.Destructor15.Types of constructors16. Inheritance17.Virtual functions18.Pure virtual functions19.Abstract class20.Types of Polymorphism (runtime , compile time)21.Early binding , late binding22.Static variable and function23.Friend class and function24.Copy constructor (Shallow Copy and Deep Copy)25.This pointer26.Namespace27.Structure vs class28.Why not virtual constructor ?29.Types of inheritance30.Exception handling (try, catch, and throw)31.Diamond Problem32.Composition and Aggregation33.How would you prevent a class in C++ from being inherited by other classes?34. final keyword35.Anonymous class in C++ (class without name , can’t have constructor ordestructor)"
-Anonymous class in C++
-"OBJECT ORIENTED PROGRAMMING :1. Programming Paradigm ( types : functional/Procedural , OOP )2. What is OOPS3. Need of OOPS4. What is Functional/Procedural prog ?5. Pillars/features of oops6. What is Class ?7. What are Objects ?8. Access specifiers9. Polymorphism10.Overloading (Function , Operator)11. Overriding12.Virtual (Vtable , Vptr)13.constructor14.Destructor15.Types of constructors16. Inheritance17.Virtual functions18.Pure virtual functions19.Abstract class20.Types of Polymorphism (runtime , compile time)21.Early binding , late binding22.Static variable and function23.Friend class and function24.Copy constructor (Shallow Copy and Deep Copy)25.This pointer26.Namespace27.Structure vs class28.Why not virtual constructor ?29.Types of inheritance30.Exception handling (try, catch, and throw)31.Diamond Problem32.Composition and Aggregation33.How would you prevent a class in C++ from being inherited by other classes?34. final keyword35.Anonymous class in C++ (class without name , can’t have constructor ordestructor)"
-Anonymous class in C++
-"GENERAL Programming( C / C++ ) Question :1.Inline function2. Namespace ( to avoid name conflict )3. Pointer4. Reference (can’t be left uninitialised like ptr and ptr can also be NULL)Is not allocated extra memory like ptr,we can’t create array of references5. Call by value and call by reference6. Difference b/w pointer and reference7. Template(generic programming)8. C vs C++9. C/C++ memory layout (Stack , Heap , BSS{initialized , uninitialised}, Text)10.differences between malloc, calloc,realloc,free and new,delete?11. const keyword12. final keyword (to prevent inheritance)13.difference between a structure and a class in C++ ?14.Describe the use of the static keyword in C and C++ with respect to functionsand variables.15.Types of storage class in c (auto, register, static, and extern)16.How do you read and write data from/to a file in C and C++ ?17.Break vs continue vs return18.Escape sequence in c/c++ (\n , \t)19. \n vs endl20.Describe what a memory leak is and how it can be avoided in C and C++.21.Explain the difference between stack memory and heap memory. When wouldyou use each ?22.Null Pointer,Wild Pointer,Dangling Pointer,Void Pointer (or Generic Pointer)23.Preprocessor Directives ( #define , #include)24.Pragma25.Macros26.macro vs typedef (typedef only for data types)27. Inline Functions and Macros28.What is the const pointer and pointer to const in C? Provide examples of each.29.Unary operators30.Pre , post increment/decrement31.Precedence and associativity32.Arithmetic Operators,Relational and Logical Operators,BitwiseOperators,Assignment Operators and Compound Assignment,ConditionalOperator (Ternary Operator),sizeof Operator,"
-Reference
-"Is not allocated extra memory like ptr,we can’t create array of references"
-"GENERAL Programming( C / C++ ) Question :1.Inline function2. Namespace ( to avoid name conflict )3. Pointer4. Reference (can’t be left uninitialised like ptr and ptr can also be NULL)Is not allocated extra memory like ptr,we can’t create array of references5. Call by value and call by reference6. Difference b/w pointer and reference7. Template(generic programming)8. C vs C++9. C/C++ memory layout (Stack , Heap , BSS{initialized , uninitialised}, Text)10.differences between malloc, calloc,realloc,free and new,delete?11. const keyword12. final keyword (to prevent inheritance)13.difference between a structure and a class in C++ ?14.Describe the use of the static keyword in C and C++ with respect to functionsand variables.15.Types of storage class in c (auto, register, static, and extern)16.How do you read and write data from/to a file in C and C++ ?17.Break vs continue vs return18.Escape sequence in c/c++ (\n , \t)19. \n vs endl20.Describe what a memory leak is and how it can be avoided in C and C++.21.Explain the difference between stack memory and heap memory. When wouldyou use each ?22.Null Pointer,Wild Pointer,Dangling Pointer,Void Pointer (or Generic Pointer)23.Preprocessor Directives ( #define , #include)24.Pragma25.Macros26.macro vs typedef (typedef only for data types)27. Inline Functions and Macros28.What is the const pointer and pointer to const in C? Provide examples of each.29.Unary operators30.Pre , post increment/decrement31.Precedence and associativity32.Arithmetic Operators,Relational and Logical Operators,BitwiseOperators,Assignment Operators and Compound Assignment,ConditionalOperator (Ternary Operator),sizeof Operator,"
-Reference
-"Is not allocated extra memory like ptr,we can’t create array of references"
-"33. Describe the various control structures in C and C++ (if, switch, for, while,do-while).34.Switch case35. In absence of break (fall through)36. In absence of default37.Different loops38.Static vs dynamic memory allocation39. Explain the concept of scope and lifetime of variables in C and C++.40.Typecasting41.Structure padding42.Primitive Data type vs Non primitive data type43.enum"
-"Links :OS : Top 100 Operating System Interview Questions (2023) (geeksforgeeks.org)40+ Operating System Interview Questions (2023) - InterviewbitCN : Top Networking Interview Questions (2023) - InterviewBit100+ Networking Interview Questions and Answers (2023) (guru99.com)DBMS : Top DBMS Interview Questions and Answers(2023 Updated) - InterviewBitLast Minute Notes - DBMS - GeeksforGeeksCommonly asked DBMS interview questions|Set 1 (geeksforgeeks.org)Commonly asked DBMS interview questions|Set 2 (geeksforgeeks.org)Top 52 DBMS Interview Questions (2023) - javatpointSQL : SQL Interview Questions CHEAT SHEET (2023) - InterviewBitThe questions below are mixed and asked most frequently in interviews , pleaseread the articles mentioned on top of page first then it’ll become easy for you toanswer such questions .( You can also refer Chat-GPT for these questions )1.TCP vs UDP2.Swap without using 3rd variable (Code , Xor wala method ek Plus , Minus wala)3.ACID properties of DBMS4.Explain and write code for Binary search5.Explain how merge sort works ? (Code + Dry Run)6.Why do we need Computer Networks ?7.FIat file or File System vs Data Base8.What is an Operating System ?9.Types of Operating System ?10. Python vs C++ (Python has interpreter and C++ has compiler , slow and fast....otherthings)11. Reverse a linked list12. Explain and write code for quick sort13. Thread vs Process14. Process vs Program15. WHat is thread ?16. Different Process states ?17. What is Thrashing , what is Belady’s anomaly and in which Page replacement algorithmit happens (FIFO) ?18. What is paging ?19. Paging vs Segmentation ?20. What is demand paging ?21. What is virtual memory ?22. What is Dead Lock ? How we can prevent it ? (Dead lock avoidance and Dead lockprevention )23. What is starvation ? Starvation vs Dead lock"
-"24. What is internal and external fragmentation ?25. What is non-contigous and contiguous memory mgmt ?26. What is cache memory ?27. What is a semaphore ? explain it’s types and usage ? (Binary vs counting )28. What are locks and how does it differ from semaphores ?29. What is the critical section ?30. What are race conditions and how does it occur ?31. What is mutual exclusion ?32. What is mutex ?33. Explain OS boot process in detail ? (Lecture 6: How Operating System Boots up?)34. What is inter process communication ?35. Shared Memory model vs message passing ?36. Preemptive vs non-preemtive scheduling ?37. Orphan and Zombie process ?38. How to prevent starvation ? (Aging : slowly increase priority over time)39. What is context switching and why it is necessary ?40. What is multiprogramming vs multi processing vs multi tasking OS ?41. What is Process Control Block ?42. What is safe state ?43. What is Dispatcher ? (A module which actually gives control of CPU to process once theCPU scheduler decides which process to be given CPU)44. STS vs LTS vs MTS45. How to achieve process synchronisation ?46. Multi-threading and it’s advantages47. Necessary condition for dead-lock48. What is compaction and when does it occur ?49. Functions of OS ?50.How to recover from a deadlock?51. All problems such as producer-consumer , dining philosopher etc.For each protocol and server you must also remember the port number associated with itex: http 80 , FTP control : 21 and Data : 201.Explain all layers of OSI model ?2.Full form of OSI3.INternet follows which model , TCP/IP or OSI ? (ans : TCP/IP model, osi is referencemodel)4.Explain some protocols of Application layer ?5.What is DNS ?6.What is DHCP ? and how does the DHCP connection gets established ? (DORA)7.Explain functionality and responsibility of each layer of OSI model ?8.What is HTTP stand for ? what port number HTTP server runs (80) ? and what is theunderlying transport layer protocol HTTP uses (TCP) ?",
-Functions of OS,
-50.How to recover from a deadlock,
-"24. What is internal and external fragmentation ?25. What is non-contigous and contiguous memory mgmt ?26. What is cache memory ?27. What is a semaphore ? explain it’s types and usage ? (Binary vs counting )28. What are locks and how does it differ from semaphores ?29. What is the critical section ?30. What are race conditions and how does it occur ?31. What is mutual exclusion ?32. What is mutex ?33. Explain OS boot process in detail ? (Lecture 6: How Operating System Boots up?)34. What is inter process communication ?35. Shared Memory model vs message passing ?36. Preemptive vs non-preemtive scheduling ?37. Orphan and Zombie process ?38. How to prevent starvation ? (Aging : slowly increase priority over time)39. What is context switching and why it is necessary ?40. What is multiprogramming vs multi processing vs multi tasking OS ?41. What is Process Control Block ?42. What is safe state ?43. What is Dispatcher ? (A module which actually gives control of CPU to process once theCPU scheduler decides which process to be given CPU)44. STS vs LTS vs MTS45. How to achieve process synchronisation ?46. Multi-threading and it’s advantages47. Necessary condition for dead-lock48. What is compaction and when does it occur ?49. Functions of OS ?50.How to recover from a deadlock?51. All problems such as producer-consumer , dining philosopher etc.For each protocol and server you must also remember the port number associated with itex: http 80 , FTP control : 21 and Data : 201.Explain all layers of OSI model ?2.Full form of OSI3.INternet follows which model , TCP/IP or OSI ? (ans : TCP/IP model, osi is referencemodel)4.Explain some protocols of Application layer ?5.What is DNS ?6.What is DHCP ? and how does the DHCP connection gets established ? (DORA)7.Explain functionality and responsibility of each layer of OSI model ?8.What is HTTP stand for ? what port number HTTP server runs (80) ? and what is theunderlying transport layer protocol HTTP uses (TCP) ?",
-Functions of OS,
-50.How to recover from a deadlock,
-"9.HTTP vs HTTPs (ports , functionality , security)10. What is VPN ?11. What is firewall ?12. Explain different types of networks. (PAN , WAN , MAN, LAN)13. What is a router ? (questions below are related to network devices please read aboutthem from chat-GPT) (IMP points : how many ports , on which layer it works ,functionality of device )14. Hub ?15. Bridge ?16. Repeater ?17. Switch ?18. Bus , STar , ring, mesh , tree and hybrid topology (See it from some website)19. What is an IP address ? Does it change ? WHy do we need an IP address ?20. WHat is Mac Address ? Does it typically change ?21. Why do we need IPv6 ?22. What are different classes of IPv4 ?23. What is class less Ip addressing ?24. Explain different classes of IP address with their range ? (A,B,C,D etc)25. What is a private IP address ?26. What is Network address translation ?27. How many layers in TCP/IP model (mention this to interviewer that there are 2explanations for this some book says 5 layers and include 1. Application 2. Transport 3.Network 4. Data Link 5. Physical where as some books mention 4 layers : 1. Application2. Transport 3. Internet 4.Link layer )28. Explain some protocols from each layer ?29. What is SMTP ?30. What is ethernet protocol ?31. What is ARP and RARP protocol ?32. What is broadcast , multicast and unicast ?33. Tcp ? when to use ?34. Udp ? when to use ?35. What is FTP ?36. What is subnet mask ? what is subnetting and why do we need that ?37. What is routing ?38. Name some routing algorithms ?39. What is the difference b/w link state and distance vector routing algorithm ?40. What are the steps involved when you enter www.google.com in your browser ?DBMS1.ACID properties ? ( I for isolation not integrity )"
-"2.What is database ? DB vs file system ?3.What is RDBMS ?4.DDL , DML , DCL and TCL5.DIfferent levels of abstraction in DBMS ? (logical/conceptual,view , physical)6.What is logical data independence and physical data independence ?7.What is entity-relationship ?8.Delete vs Drop vs truncate ?9.WHat are locks ? what is shared vs exclusive lock ?10. What is normalisation ?11. Explain 1 NF ? ( remember what is unique in all normal forms )12. 2 NF ?13. 3 NF ?14. BCNF ?15. What are keys in DBMS ?"
-"16. Explain primary key ?17. Foreign key ?18. Candidate key ?19. Super key ?20. Composite key ?21. Surrogate key ?22. Constraints in DBMS and it’s types ?23. Views in DBMS ?24. What is Transaction in DBMS ?25.2 tier vs 3 tier architecture in DBMS26. Commonly asked DBMS interview questions|Set 2 (geeksforgeeks.org)27. Advantages of DBMS28. Grant , revoke and roll back29.What is functional Dependency?30. What is an attribute?31. What is an Entity set?32. What is Weak Entity set?33. What are the integrity rules in DBMS?34. What is Data Independence?35. What is Join?SQL :SQL Interview Questions CHEAT SHEET (2023) - InterviewBitSQL Interview Questions (2023) - GeeksforGeeksSQL Interview Questions (2023) - javatpointTop 115 SQL Interview Questions and Answers in 2023 | EdurekaAlso refer Love Babbar’s 1 hr SQL interview questions video :Lecture 10: Common SQL Queries for Interviews1.What are Constraints in SQL?2.What is a UNIQUE constraint?3.What is a Join? List its different types.4.What is a Self-Join?5.What is a Cross-Join?6.What is a Query?7.What is a SubQuery?8.What is the SELECT statement?9.What are some common clauses used with SELECT query in SQL?10. What are UNION, MINUS and INTERSECT commands? (Not so Imp)11. What is an Alias in SQL?12. What is a View?13. What are the TRUNCATE, DELETE and DROP statements?"
-"(P.T.O.)14. What are Aggregate and Scalar functions? ( avg(),min(),max() etc.)15. What is OLTP?16. What are the differences between OLTP and OLAP?17. No SQL vs SQLSOFTWARE ENGINEERING : Software Engineering: What It is, Definition, Tutorial -javatpoint1.What is Software Engineering ?2.Explain different process models in SE ?3.What is Software Development Life Cycle (SDLC) ?4.Why do we need SE process ?5.Need of SDLC ?6.Water fall model ?7.Agile ?8.Incremental development ?9.Iterative development ?"
-"LINUX : (Linux Boot Process in Hindi | MPrashan)tZombie Processes: How To Hunt, Kill and Remove a Zombie Process on Linux - AlibabaCloud Communitylinux - How to kill zombie process - Stack Overflow1. What is LILO?Ans: LILO means Linux Loader is a boot loader that is used for the Linux operating system.Most of the Linux Operating systems use LILO, to boot the operating system into mainmemory to start the operations."
-1. What is LILO?
-Ans: LILO means Linux Loader is a boot loader that is used for the Linux operating system.
-"Most of the Linux Operating systems use LILO, to boot the operating system into main"
-memory to start the operations.
+"",,LMX Series
+"",,"High Performance Linear AC Power SourcesSingle, Split and Three Phase ModeAnalog Amplifier Technology"
+"Extensive Features:• True Linear Technology for superiooutput fidelity• Three Phase, Split Phase and SingleOutput Modes• Frequency Range 15 - 5000Hz• Less than 0.1% Vthd Distortion up• Ripple and Noise less than -72dB• Phase Angle Programming on 3ø• Precise Output Voltage and LoadRegulation• Metering of Volts, RMS Current, PeCurrent,  Apparent Power & True Pall Phases• Harmonic Measurements• Scope Function to capture VoltageCurrent waveforms• Sine, Square, Triangle, Clipped Sineand Arbitrary Waveforms Selection• Output LIST, PULSE and STEP ModTransient Programming• Standard USB, LAN, RS232 & GPIB I• Compatible with Legacy UPC Cont","ACPhaseo 450Hzodelskwer on&terfacesollers",
+"",,
+"",,
+"""Innovating S","utions for Control and Monitoring of Power""",
+Innovating S,"utions for Control and Monitoring of Power""",
+""
+""
+"",,,,,,,,
+"",,,,,,,,
+"",,,,,,,,
+"",,,,,,,,
+"",,,,,,,,
+MADE IN USA,,,,,,,,
+""
+FREQUENCY CONVERSIONAEROSPACER & DMILITARYMANUFACTURINGCUSTOM
+"ProgrammingMetering"
+""
+"Total Control, Metering and Analysis of AC Power.   Sim"
+""
+"ProgrammingMetering"
+""
+""
+"le, Intuitive Operation",LMX SERIES
 ""
 ""
 ""
-"LINUX : (Linux Boot Process in Hindi | MPrashan)tZombie Processes: How To Hunt, Kill and Remove a Zombie Process on Linux - AlibabaCloud Communitylinux - How to kill zombie process - Stack Overflow1. What is LILO?Ans: LILO means Linux Loader is a boot loader that is used for the Linux operating system.Most of the Linux Operating systems use LILO, to boot the operating system into mainmemory to start the operations."
-1. What is LILO?
-Ans: LILO means Linux Loader is a boot loader that is used for the Linux operating system.
-"Most of the Linux Operating systems use LILO, to boot the operating system into main"
-memory to start the operations.
+""
+"",
 ""
 ""
 ""
-LINUX NETWORKING :Top Linux Network Commands in 2023 (mindmajix.com)
 ""
-LINUX NETWORKING :Top Linux Network Commands in 2023 (mindmajix.com)
-""
-LINUX NETWORKING :Top Linux Network Commands in 2023 (mindmajix.com)
-""
-LINUX NETWORKING :Top Linux Network Commands in 2023 (mindmajix.com)
-""
-"PROCESS MANAGEMENT COMMANDS : Commands for Process Management inLinux | DigitalOceanLinux/Unix Process Management: ps, kill, top, df, free, nice Commands (guru99.com)Commands for Process Management in Linux (linuxhint.com)"
-PROCESS MANAGEMENT COMMANDS : Commands for Process Management in
-Linux | DigitalOcean
-"Linux/Unix Process Management: ps, kill, top, df, free, nice Commands (guru99.com)"
-Commands for Process Management in Linux (linuxhint.com)
+"Commercial Avionics Power TestThe low noise and low distortion  analog power conversiontechnology used in the LMX Series Power Source resultsinunmatchedvoltagequalityandhighpeakcurrentcapability.  A wide frequency range of 15Hz to 5000Hzsupports both 400Hz fixed frequency as well as 360Hzto800Hzwildfrequencydevelopmentandtestwithexceptional harmonics support.For compliance testing to electrical avionics test standardslike RTCA/DO160 Section 16, the high 50 kHz small signalbandwidth of the LMX Series outperforms any switch-mode AC power source.Waveform Controlwww.pacificpower.comsales@pacificpower.comToll Free: 1.800.854.2433Tel: +1.949.251.1800Page 3 of 12"
+"",LMX SERIES
+Selecting the best Topology for Your Application
 ""
 ""
 ""
-"PROCESS MANAGEMENT COMMANDS : Commands for Process Management inLinux | DigitalOceanLinux/Unix Process Management: ps, kill, top, df, free, nice Commands (guru99.com)Commands for Process Management in Linux (linuxhint.com)"
-PROCESS MANAGEMENT COMMANDS : Commands for Process Management in
-Linux | DigitalOcean
-"Linux/Unix Process Management: ps, kill, top, df, free, nice Commands (guru99.com)"
-Commands for Process Management in Linux (linuxhint.com)
+BENEFITS
+Very low output distortion
+Wide output bandwidth
+"High crest factor handling forwide range of loads withoutwaveform distortion"
+DRAWBACKS
+"Higher temperature operation due toclass A, B, and AB amplifier inefficiencies"
+"Larger size due to increased componentcount"
+"Higher weight due to increasedcomponent count"
+LINEAR
+Best
+Best
+Best
+Best
+Best
+Best
+Output Phase Modes
 ""
 ""
 ""
+"",
+""
+"",
+"",
+"",
+""
+""
+""
+""
+""
+""
+""
+""
+""
+"",,
+"",,
+"",,
+""
+""
+""
+""
+Page 4 of 12www.pacificpower.comsales@pacificpower.comToll Free: 1.800.854.2433Tel: +1.949.251.1800
+"",LMX SERIES
+Wide Selection of Voltage Ranges
+""
+""
+""
+""
+""
+""
+"",,
+"Powerful yet Easy to UseAlthoughLMXSeriessourcesofferawiderangeofoperating modes and features, they are easy to operatethrough a large full color LCD display and soft key drivenmenus.Top level menus are always available directly by pressinganyofthefivemenukeysontheleftofthedisplay.Entering setup data is accomplished using the numerickeypadortheshuttle.Operatingstatusisshownonscreenusingvariouscolorstodistinguishbetweensetting, measurements and operator warnings, or errormessages.Thebuilt-inwebserverprovidesaccesstoalargecomputertouchmonitorbaseduserinterfacewithcompletecontroloverallLMXFunctionsandfeatureswithouttheneedforanyspecialsoftware.Thewebbrowserbasedprogramandmeasurementscreenisshown to the right.",Powerful yet Easy to Use
+"",
+"Powerful yet Easy to UseAlthoughLMXSeriessourcesofferawiderangeofoperating modes and features, they are easy to operatethrough a large full color LCD display and soft key drivenmenus.Top level menus are always available directly by pressinganyofthefivemenukeysontheleftofthedisplay.Entering setup data is accomplished using the numerickeypadortheshuttle.Operatingstatusisshownonscreenusingvariouscolorstodistinguishbetweensetting, measurements and operator warnings, or errormessages.Thebuilt-inwebserverprovidesaccesstoalargecomputertouchmonitorbaseduserinterfacewithcompletecontroloverallLMXFunctionsandfeatureswithouttheneedforanyspecialsoftware.Thewebbrowserbasedprogramandmeasurementscreenisshown to the right."
+""
+Touch Screen and WiFi Connection
+"Waveform Controlwww.pacificpower.comsales@pacificpower.comToll Free: 1.800.854.2433Tel: +1.949.251.1800Page 5 of 12"
+"",LMX SERIES
+Transient Programming for AC Power Test Applications
+""
+"",
+"The LMX Series' rich feature set supports a wide variety ofAC power test applications. With full control over voltage,current, frequency, power, slew rates and phase angles, notest requirement is too challenging for the LMX to handle.This includes AC power compliance testing, transformertesting, appliance testing, DC charger testing, UPS testingand more.The scope images shown here capture several examplesof AC power test waveforms generated by an LMX.Three Phase Unbalance Voltage Test CapturedThree Phase Voltage Drop Test CapturedAC Transient Output Captured on Digital Scope"
+""
+Page 6 of 12www.pacificpower.comsales@pacificpower.comToll Free: 1.800.854.2433Tel: +1.949.251.1800
+"",LMX SERIES
+"200 Selectable Arbitrary WaveformsIn addition to sine wave, the LMX Series offers multipleselectable AC waveforms such as clipped sine wave atvariousdistortionlevels,square,triangleandsteppedsquares.  The operator can create arbitrary waveformsusing Pacific Power's PPSC Studio Windows software  orusing a web browser and download these to the powersource.Agraphicalrepresentation(preview)ofeachwaveform is shown on screen and a waveform name aliascan be assigned to each so the operator can be sure thecorrect waveform is applied to the unit under test.Clipped Sine Waveform Selection - Vthd = 2%",200 Selectable Arbitrary Waveforms
+Capture Voltage & Current Waveforms
+"Harmonics MeasurementsEliminatetheneedforanexternalpoweranalyzer by measuring voltage and currentharmonics.Harmonicsinformationisdisplayedineitherbarchartsordetailedtable format for easy viewing and analysis.Data is displayed for individual phase or allthree phase simultaneously."
+""
+""
+"Harmonics MeasurementsEliminatetheneedforanexternalpoweranalyzer by measuring voltage and currentharmonics.Harmonicsinformationisdisplayedineitherbarchartsordetailedtable format for easy viewing and analysis.Data is displayed for individual phase or allthree phase simultaneously.",Harmonics Measurements
+"",
+"",
+Auxiliary I/O Functions
+""
+"Waveform Controlwww.pacificpower.comsales@pacificpower.comToll Free: 1.800.854.2433Tel: +1.949.251.1800Page 7 of 12"
+"",LMX SERIES
+"",
+"",
+""
+""
+""
+""
+Single Phase Models
+Direct Coupled Output Units (15 Hz - 5000 Hz)
+MODEL,"RatedPower(VA)1","OutputForm2",Output Voltage Max3 (l-n/l-l),"Output Current4 (A)","InputPower 5","UnitHeight(in.-U)","UnitWeight(lbs/kg)"
+105LMX,500,1/2,0-135/270,4/2,1Ø,5.25-3U,70/31.8
+108LMX,750,1/2,0-135/270,6/3,1Ø,5.25-3U,70/31.8
+112LMX,1200,1/2,0-150/300,10/5,1Ø,5.25-3U,80/36.3
+140LMX,4000,1/2,0-135/270,32/16,3Ø,14-8U,185/84.0
+160LMX,6000,1/2,0-135/270,48/16,3Ø,14-8U,195/88.6
+Direct / Transformer Coupled Selectable Output Units (45 Hz - 5000 Hz)
+MODEL,"RatedPower(VA)1","OutputForm2",Output Voltage Max3 (l-n/l-l),"Output Current4 (A)","InputPower 5","UnitHeight (in.-U)Weight(lbs/kg)","TransformerHeight (in.-U)Weight(lbs/kg)",,,,,,
+"",,,Direct,Transformer,Direct,Transformer,,,,,,,
+"",,,"Ratio1.5:1","Ratio2.0:1","Ratio2.5:1","Ratio1.5:1","Ratio2.0:1","Ratio2.5:1",,,,,
+105LMXT,500,1/2,0-135/270,0-202/404,0-270/540,0-338/600,4/2,2.6/1.3,2/1,1.6/0.8,1Ø,"5.25-3U97/44.0",Integrated
+108LMXT,750,1/2,0-135/270,0-202/404,0-270/540,0-338/600,6/3,4/2,3/1.5,2.4/1.2,1Ø,"5.25-3U97/44.0",Integrated
+140LMXT,4000,1/2,0-135/270,0-202/404,0-270/540,0-338/600,32/16,21.3/10.7,16/8,12.8/6.4,3Ø,"14-8U185/84.0","5.25-3U125/56.8"
+160LMXT,6000,1/2,0-135/270,0-202/404,0-270/540,0-338/600,48/16,32/10.7,24/8,19.2/6.4,3Ø,"14-8U195/88.6","5.25-3U125/56.8"
+""
+35,,
+"",,
+35,,""",m"
+"",,
+"",,
+35
+""
+""
+35,
+"",35
+"",
+""
+""
+""
+1,.,"U5"",mm"
+""
+""
+""
+""
+Page 8 of 12www.pacificpower.comsales@pacificpower.comToll Free: 1.800.854.2433Tel: +1.949.251.1800
+"",LMX SERIES
+Three Phase Models
+Direct Coupled Output Units (15 Hz - 5000 Hz)
+MODEL,"RatedPower(VA)1","OutputForm2",Output Voltage Max3 (l-n/l-l),"Output Current4 (A)rms","InputPower5","UnitHeight(in.-U)","UnitWeight(lbs/kg)"
+305LMX,500,"1/23","0-135/2700-135/234","4/21.3/Ø",1Ø,5.25-3U,74/33.6
+308LMX,750,"1/23","0-135/2700-135/234","6/22/Ø",1Ø,5.25-3U,74/33.6
+312LMX,1200,"1/23","0-150/3000-150/260","10/3.33.3/Ø",1Ø,5.25-3U,80/36.3
+320LMX,2000,"1/23","0-135/2700-135/234","18/66/Ø",3Ø,8.75-5U,150/68.2
+345LMX,4500,"1/23","0-135/2700-135/234","36/1212/Ø",3Ø,14-8U,190/86.3
+360LMX,6000,"1/23","0-135/2700-135/234","48/1616/Ø",3Ø,14-8U,195/88.6
+Direct / Transformer Coupled Selectable Output Units (45 Hz - 5000 Hz)
+MODEL,"RatedPower(VA)1","OutputForm2",Output Voltage Max3 (l-n/l-l),"Output Current4 (A)","InputPower5","UnitHeight (in.-U)Weight(lbs/kg)","TransformerHeight (in.-U)Weight(lbs/kg)",,,,,,
+"",,,Direct,Transformer,Direct,Transformer,,,,,,,
+"",,,,"Ratio1.5:1","Ratio2.0:1","Ratio2.5:1","Ratio1.5:1","Ratio2.0:1","Ratio2.5:1",,,,
+305LMXT,500,"1/23","0-135/2700-135/234","0-202/4040-202/350","0-270/5400-270/468","0-338/6000-338/585","4/21.5/Ø","2.6/1.31.0/Ø","2/10.75/Ø","1.6/0.80.6/Ø",1Ø,"5.25-3U100/45.5",Integrated
+308LMXT,750,"1/23","0-135/2700-135/234","0-202/4040-202/350","0-270/5400-270/468","0-338/6000-338/585","6/22/Ø","4/1.31.3/Ø","3/11/Ø","2.4/0.80.8/Ø",1Ø,"5.25-3U100/45.5",Integrated
+320LMXT,2000,"1/23","0-135/2700-135/234","0-202/4040-202/350","0-270/5400-270/468","0-338/6000-338/585","18/66/Ø","12/44/Ø","9/33/Ø","7.2/2.42.4/Ø",3Ø,"8.75-5U150/68.2","5.25-3U125/56.8"
+345LMXT,4500,"1/23","0-135/2700-135/234","0-202/4040-202/350","0-270/5400-270/468","0-338/6000-338/585","36/1212/Ø","24/88/Ø","18/66/Ø","14.4/4.84.8/Ø",3Ø,"14-8U190/86.3","5.25-3U125/56.8"
+360LMXT,6000,"1/23","0-135/2700-135/234","0-202/4040-202/350","0-270/5400-270/468","0-338/6000-338/585","48/1616/Ø","32/10.710.7/Ø","24/88/Ø","19.2/6.46.4/Ø",3Ø,"14-8U195/88.6","5.25-3U125/56.8"
+Parallel Configurations for Higher Power
+MODEL1,Consist of,Phase Mode,"RatedPower"
+390/180LMX,2 x 345 or 140LMX,3 & 2 or 1 Phase,9 / 8 kVA
+3120/1120LMX,2 x 360 or 160LMX,3 & 2 or 1 Phase,12 kVA
+3180 /1180LMX,3 x 360 or 160LMX,3 & 2 or 1 Phase,18 kVA
+3240/1240LMX,4 x 360 or 160LMX,3 & 2 or 1 Phase,24 kVA
+3300/1300LMX,5 x 360 or 160LMX,3 & 2 or 1 Phase,30 kVA
+"Waveform Controlwww.pacificpower.comsales@pacificpower.comToll Free: 1.800.854.2433Tel: +1.949.251.1800Page 9 of 12"
+"",LMX SERIES
+"",
+"",
+"",
+""
+""
+""
+""
+""
+""
+Technical Specifications (common to all LMX Models)
+OUTPUT,SPECIFICATION,
+Power,,
+Output,See Model Tables page 8 & 9,
+Voltage,,
+Mode,AC,
+Direct Coupled Range1,0-135 Vac LN / 0-234 Vac LL,
+T-Option Ranges,"Turns ratios: 1.5:1, 2.0:1, 2.5:1",
+Programming Resolution,0.01 V,
+Accuracy,±0.1% (CSC mode),
+"Waveforms(200 Max.)","Sine, Square, Triangle,Clipped (THD), Arbitrary",
+DC Offset,< 20 mV,
+Harmonic Distortion (Vthd),"(full, resistive load)",
+3U Models:,"15~450 Hz: < 0.1%450~5000 Hz: <  f x 0.076% +0.07% (f in kHz)",
+5U Models:,"15~1000 Hz: < 0.1%1000~5000 Hz: < 0.25%",
+8U Models:,,
+Output Noise,< 50 mVrms,
+Load Regulation,"± 0.02% F.S. in CSC Mode±0.25% F.S. CSC off",
+Line Regulation,< 0.1% for 10% Line Change,
+Voltage Sense,"External Sense, max. voltagedrop 5% F.S.",
+Voltage Response Time,5 μsec typical step load change,
+Small Signal Bandwidth,"5 Hz to 40 kHz, ±3dB, 10% F.S.",
+Isolation,,
+Output Neutral to Chassis,150Vac,
+Frequency,,
+Direct Coupled Range,15.00 – 5000.0 Hz,
+T-Option,45.00 – 5000.0 Hz,
+Programming Resolution,0.01 Hz,
+Accuracy,± 0.005% / 50 ppm,
+Current,,
+Range,See Model Tables page 8 & 9,
+Programming Resolution,0.01 Arms,
+Accuracy2,± (0.5% + f (kHz) * 0.5%) F.S.,
+"Current Protection (CP)Modes","Constant Current (CC)or Output Trip (CV)",
+Phase Angle (In 3 and 2 Phas,Mode),
+"Programmable Phase (B, C)",0 - 359.9°,
+Resolution,0.1°,
+Accuracy,±0.35° / ±0.1° Phase Reg. Mode,
+Programmable Impedance,"Per unit, incl paralleled)",
+Available Modes,"Real-time mode, RMS mode",
+Phase Mode,1 Phs / 3 Phs,2 Phs
+Resistance (R),±100 W,±200 W
+Inductance (L),0 - 2 mH,0 - 4 mH
+TRANSIENTS,Specification
+Programming,
+No. of Entries,200 Steps / 400 segments
+Modes,"LIST, PULSE, STEP"
+Parameters,"Frequency, Volt AC, Waveform,Ramp Time, Dwell Time"
+Dwell Time Range,0.2 - 10000000.0 msec
+Time Resolution,0.1 msec
+Edit Modes,"Add at end, Insert before, Delete"
+Execution,
+Run Control,"Run from step # to step #Run, Step, Restart, Stop"
+Execution Modes,"Normal, Debug"
+Program Storage,
+Non-volatile,100 Programs + Transients
+MEASUREMENTS,SPECIFICATION
+AC Voltage (Vrms),
+Range,0 – 340 VLN / 0-600 VLL
+Resolution,0.01 V
+Accuracy,± 0.1% F.S.
+Frequency (Hz),
+Fundamental Range,15 - 5000 Hz
+Resolution,0.01 Hz
+Accuracy,± 0.1% Rdg
+AC Current (Arms),
+Range,See Model Tables page 8 & 9
+Resolution,0.01 Arms
+Accuracy1,± (0.5% + f (kHz) * 0.5%) F.S.
+Current Crest Factor,
+Range,1.00 - 5.00
+Resolution,0.01
+Accuracy1,± 2.0% F.S.
+AC Power (W),
+Range,See Model Tables page 8 & 9
+Resolution,1 W front panel / 0.1 W remote
+Accuracy1,± 0.75 % F.S.
+Apparent Power (VA),
+Range,See Model Tables page 8 & 9
+Resolution,1 VA front panel / 0.1 VA remote
+Accuracy1,± 0.75 % F.S.
+Power Factor,
+Range,0.00 - 1.00
+Resolution,0.01
+PROTECTION,SPECIFICATION
+Types,"AC Current, True Power, Appar-ent Power, Over Voltage, OverTemperature"
+WAVEFORM CAPTURE,SPECIFICATION
+Parameters,"VLN-A, VLN-B, VLN-C,VLL AB ,VLL AC ,VLL BC ,IA, IB, IC"
+Max. Sample Rate,500 ksps
+Samples/cycle,"1024  (512 in UPC Compatibilitymode)"
+Record Length,8 MSamples
+Bandwidth,100 kHz @ 500 ksps
+Page 10 of 12www.pacificpower.comsales@pacificpower.comToll Free: 1.800.854.2433Tel: +1.949.251.1800
+"",,LMX SERIES
+Technical Specifications (continued)
+HARMONICS MEAS.,SPECIFICATION
+Parameters,"VLN-A, VLN-B, VLN-C,VLL AB ,VLL AC ,VLL BC ,IA, IB, IC"
+Harmonics Range,H2 ~ H50
+Accuracy – Amplitude,± 1.0 % of RMS Reading
+Phase Angle Range,0 ~ 359.9
+Accuracy - Phase Angle,< 8 msec
+Bandwidth,100 kHz @ 500 ksps
+Display Modes,"Table format, Graph Format"
+AC INPUT,SPECIFICATION
+Mains Voltage Form,"4 Wire, L1, L2, L3 and PE"
+Frequency,47 - 63 Hz
+Single Phase AC Input Se,ections
+Input Voltages,"100, 110, 120, 200, 220 or 240 Vac"
+Phase Current,Model specific
+Input Power Factor,> 0.9
+Three Phase AC Input Sel,ctions
+Input Voltages,"208, 220, 240, 380, 416 or 480 Vac"
+Phase Current,Model specific
+Input Power Factor,> 0.9
+ANALOG I/O,SPECIFICATION
+Analog Inputs (4),
+Modes,"Amplifier, Amplitude Modulation, Int.+ Ext. Input Summing"
+"AI1, AI2, AI3","Programmable setting phs A, B, C"
+AI4,Frequency
+Range,0 -10 Vdc for 0 - F.S.
+Accuracy,± 0.1% F.S.
+Impedance,10 kOhm
+Analog Outputs (4),
+"AO1, AO2, AO3","Voltage Meas. phs A, B, C"
+AO4,Power Measurement Total
+Range,0 - 10Vdc for 0 - F.S.
+Accuracy,± 0.1% F.S. into > 5 kOhm load
+Impedance,5 kOhm
+Connector Type,"DB25, Rear Panel"
+ENVIRONMENTAL,SPECIFICATION
+Cooling,"Variable speed fan cooled, front and/orside air intake, rear exhaust"
+Audible Noise,65 dBA Max. @ 1 meter
+Temperature,
+Operating,0 to 55 °C / 32 to 131 °F
+Storage,-10 to 70 °C / 14 to 158 °F
+Humidity,"< 0 - 95 %, non-condensing"
+Altitude,"Operating: 1,981 m / 6500 feetStorage: 12,192 m / 40,000 feet"
+DIGITAL I/O,SPECIFICATION
+Digital Inputs (6),
+Fixed (3),"Remote Inhibit, Transient Trigger,Phase Sync"
+User Programmable (3),"DI1, DI2, DI3"
+Input Levels,"Low < 0.4V, High > 2.0V"
+Digital Outputs (6),
+"Open Collector, Fixed(2)","Relay Control FORM, Relay Control TOption"
+"TTL, Fixed (2)","Output Relay/Transient/Function StrobePhase Sync"
+User Programmable (2),"DO1, DO2"
+Output Levels,"Low < 0.4V, High > 4.6V"
+Connector Type,"DB25, Rear Panel"
+SYSTEM FEATURES,DESCRIPTION
+"",
+Type,"Full Color, Touch LCD Display"
+Size,"4.3"" Diagonal"
+Resolution,480 x 272 pixels
+USB Ports,"2 Front Panel, 1 Rear Panel, Type A"
+SD Card,32 GB max. Capacity
+Video Output,"Monitor Out, Front Panel"
+MECHANICAL,SPECIFICATION
+Dimensions,
+Width,"19"" / 482mm"
+Height,See Model Tables page 8 & 9
+"Depth(Includes rear connectors,excludes rack handles)","3U Models: 23.8"" / 604 mm5U Models: 25.1"" / 637 mm8U Models: 24.4"" / 621 mm"
+Weight,
+Net,See Model Tables page 8 & 9
+INTERFACES,DESCRIPTION
+Remote Control,
+USB,Device Type B
+RS232,1200 - 921600 baud
+LAN,"LXI compliant, Ethernet, RJ45, TCP/IPProtocol, Telnet Protocol CommandLine"
+GPIB,"IEEE488,1, IEEE488.2 (2003 incl., NI HS488)IEC 60488-1, IEC 60488-2 (2004)"
+"","Functions: SH1, AH1, T6, L3, SR1, RL1, DC1, DT1"
+WiFi,"Optional USB WiFi adaptoravailable"
+REGULATORY,SPECIFICATION
+Safety,IEC 61010-1:2010 (Edition 3)
+EMC,
+Emissions Standard,EN 55011:2009+A1:2010
+Immunity Standard,"EN 61000-4-2, -3, -4, -5, -6, -8, -11"
+Product Category,"EN 61326-1:2013 (Measurement,Laboratory and Control Equipment)"
+Approvals (Option),"CE Mark, NRTL Safety"
+RoHS (DIRECTIVE 2011/,5/EU)
+Product Category,EN50581:2012
+"Waveform Controlwww.pacificpower.comsales@pacificpower.comToll Free: 1.800.854.2433Tel: +1.949.251.1800Page 11 of 12"
+"",,
+"",,
+"",,
+"",,
+"",,
+"",,
+"",,
+"",,
+"",LMX SERIES,
+"",,
+"",,
+"",,
+"",,
+"",,
+"",,
+"",,
+"",,
+Ordering Information
+Standard Models
+"Single Phase Models (T = Option)Three Phase Models (T = Option)AC Input Voltages (VIN)105LMX(T)305LMX(T)Must be specified on order, see pages 8 & 9108LMX(T)308LMX(T)Options112LMX312LMX413     Option ""C"" Interharmonics Generator140LMX(T)320LMX(T)PB*     Parallel Bus Master UnitAUX*  Parallel Auxiliary Unit, no controlller160LMX(T)345LMX(T)E          Export version, ""E"" postfix360LMX(T)* Available on 140, 160, 345 & 360LMX models only"
+""
+"Single Phase Models (T = Option)Three Phase Models (T = Option)AC Input Voltages (VIN)105LMX(T)305LMX(T)Must be specified on order, see pages 8 & 9108LMX(T)308LMX(T)Options112LMX312LMX413     Option ""C"" Interharmonics Generator140LMX(T)320LMX(T)PB*     Parallel Bus Master UnitAUX*  Parallel Auxiliary Unit, no controlller160LMX(T)345LMX(T)E          Export version, ""E"" postfix360LMX(T)* Available on 140, 160, 345 & 360LMX models only"
+""
+"Single Phase Models (T = Option)Three Phase Models (T = Option)AC Input Voltages (VIN)105LMX(T)305LMX(T)Must be specified on order, see pages 8 & 9108LMX(T)308LMX(T)Options112LMX312LMX413     Option ""C"" Interharmonics Generator140LMX(T)320LMX(T)PB*     Parallel Bus Master UnitAUX*  Parallel Auxiliary Unit, no controlller160LMX(T)345LMX(T)E          Export version, ""E"" postfix360LMX(T)* Available on 140, 160, 345 & 360LMX models only"
+""
+"Single Phase Models (T = Option)Three Phase Models (T = Option)AC Input Voltages (VIN)105LMX(T)305LMX(T)Must be specified on order, see pages 8 & 9108LMX(T)308LMX(T)Options112LMX312LMX413     Option ""C"" Interharmonics Generator140LMX(T)320LMX(T)PB*     Parallel Bus Master UnitAUX*  Parallel Auxiliary Unit, no controlller160LMX(T)345LMX(T)E          Export version, ""E"" postfix360LMX(T)* Available on 140, 160, 345 & 360LMX models only"
+""
+"Single Phase Models (T = Option)Three Phase Models (T = Option)AC Input Voltages (VIN)105LMX(T)305LMX(T)Must be specified on order, see pages 8 & 9108LMX(T)308LMX(T)Options112LMX312LMX413     Option ""C"" Interharmonics Generator140LMX(T)320LMX(T)PB*     Parallel Bus Master UnitAUX*  Parallel Auxiliary Unit, no controlller160LMX(T)345LMX(T)E          Export version, ""E"" postfix360LMX(T)* Available on 140, 160, 345 & 360LMX models only"
+""
+"Single Phase Models (T = Option)Three Phase Models (T = Option)AC Input Voltages (VIN)105LMX(T)305LMX(T)Must be specified on order, see pages 8 & 9108LMX(T)308LMX(T)Options112LMX312LMX413     Option ""C"" Interharmonics Generator140LMX(T)320LMX(T)PB*     Parallel Bus Master UnitAUX*  Parallel Auxiliary Unit, no controlller160LMX(T)345LMX(T)E          Export version, ""E"" postfix360LMX(T)* Available on 140, 160, 345 & 360LMX models only"
+""
+"Single Phase Models (T = Option)Three Phase Models (T = Option)AC Input Voltages (VIN)105LMX(T)305LMX(T)Must be specified on order, see pages 8 & 9108LMX(T)308LMX(T)Options112LMX312LMX413     Option ""C"" Interharmonics Generator140LMX(T)320LMX(T)PB*     Parallel Bus Master UnitAUX*  Parallel Auxiliary Unit, no controlller160LMX(T)345LMX(T)E          Export version, ""E"" postfix360LMX(T)* Available on 140, 160, 345 & 360LMX models only"
+""
+"Single Phase Models (T = Option)Three Phase Models (T = Option)AC Input Voltages (VIN)105LMX(T)305LMX(T)Must be specified on order, see pages 8 & 9108LMX(T)308LMX(T)Options112LMX312LMX413     Option ""C"" Interharmonics Generator140LMX(T)320LMX(T)PB*     Parallel Bus Master UnitAUX*  Parallel Auxiliary Unit, no controlller160LMX(T)345LMX(T)E          Export version, ""E"" postfix360LMX(T)* Available on 140, 160, 345 & 360LMX models only"
+""
+"Single Phase Models (T = Option)Three Phase Models (T = Option)AC Input Voltages (VIN)105LMX(T)305LMX(T)Must be specified on order, see pages 8 & 9108LMX(T)308LMX(T)Options112LMX312LMX413     Option ""C"" Interharmonics Generator140LMX(T)320LMX(T)PB*     Parallel Bus Master UnitAUX*  Parallel Auxiliary Unit, no controlller160LMX(T)345LMX(T)E          Export version, ""E"" postfix360LMX(T)* Available on 140, 160, 345 & 360LMX models only"
+""
+"Single Phase Models (T = Option)Three Phase Models (T = Option)AC Input Voltages (VIN)105LMX(T)305LMX(T)Must be specified on order, see pages 8 & 9108LMX(T)308LMX(T)Options112LMX312LMX413     Option ""C"" Interharmonics Generator140LMX(T)320LMX(T)PB*     Parallel Bus Master UnitAUX*  Parallel Auxiliary Unit, no controlller160LMX(T)345LMX(T)E          Export version, ""E"" postfix360LMX(T)* Available on 140, 160, 345 & 360LMX models only"
+""
+"Single Phase Models (T = Option)Three Phase Models (T = Option)AC Input Voltages (VIN)105LMX(T)305LMX(T)Must be specified on order, see pages 8 & 9108LMX(T)308LMX(T)Options112LMX312LMX413     Option ""C"" Interharmonics Generator140LMX(T)320LMX(T)PB*     Parallel Bus Master UnitAUX*  Parallel Auxiliary Unit, no controlller160LMX(T)345LMX(T)E          Export version, ""E"" postfix360LMX(T)* Available on 140, 160, 345 & 360LMX models only"
+Options
+"Single Phase Models (T = Option)Three Phase Models (T = Option)AC Input Voltages (VIN)105LMX(T)305LMX(T)Must be specified on order, see pages 8 & 9108LMX(T)308LMX(T)Options112LMX312LMX413     Option ""C"" Interharmonics Generator140LMX(T)320LMX(T)PB*     Parallel Bus Master UnitAUX*  Parallel Auxiliary Unit, no controlller160LMX(T)345LMX(T)E          Export version, ""E"" postfix360LMX(T)* Available on 140, 160, 345 & 360LMX models only"
+""
+"Single Phase Models (T = Option)Three Phase Models (T = Option)AC Input Voltages (VIN)105LMX(T)305LMX(T)Must be specified on order, see pages 8 & 9108LMX(T)308LMX(T)Options112LMX312LMX413     Option ""C"" Interharmonics Generator140LMX(T)320LMX(T)PB*     Parallel Bus Master UnitAUX*  Parallel Auxiliary Unit, no controlller160LMX(T)345LMX(T)E          Export version, ""E"" postfix360LMX(T)* Available on 140, 160, 345 & 360LMX models only"
+""
+"Single Phase Models (T = Option)Three Phase Models (T = Option)AC Input Voltages (VIN)105LMX(T)305LMX(T)Must be specified on order, see pages 8 & 9108LMX(T)308LMX(T)Options112LMX312LMX413     Option ""C"" Interharmonics Generator140LMX(T)320LMX(T)PB*     Parallel Bus Master UnitAUX*  Parallel Auxiliary Unit, no controlller160LMX(T)345LMX(T)E          Export version, ""E"" postfix360LMX(T)* Available on 140, 160, 345 & 360LMX models only"
+""
+"Single Phase Models (T = Option)Three Phase Models (T = Option)AC Input Voltages (VIN)105LMX(T)305LMX(T)Must be specified on order, see pages 8 & 9108LMX(T)308LMX(T)Options112LMX312LMX413     Option ""C"" Interharmonics Generator140LMX(T)320LMX(T)PB*     Parallel Bus Master UnitAUX*  Parallel Auxiliary Unit, no controlller160LMX(T)345LMX(T)E          Export version, ""E"" postfix360LMX(T)* Available on 140, 160, 345 & 360LMX models only"
+""
+"Single Phase Models (T = Option)Three Phase Models (T = Option)AC Input Voltages (VIN)105LMX(T)305LMX(T)Must be specified on order, see pages 8 & 9108LMX(T)308LMX(T)Options112LMX312LMX413     Option ""C"" Interharmonics Generator140LMX(T)320LMX(T)PB*     Parallel Bus Master UnitAUX*  Parallel Auxiliary Unit, no controlller160LMX(T)345LMX(T)E          Export version, ""E"" postfix360LMX(T)* Available on 140, 160, 345 & 360LMX models only"
+""
+"Single Phase Models (T = Option)Three Phase Models (T = Option)AC Input Voltages (VIN)105LMX(T)305LMX(T)Must be specified on order, see pages 8 & 9108LMX(T)308LMX(T)Options112LMX312LMX413     Option ""C"" Interharmonics Generator140LMX(T)320LMX(T)PB*     Parallel Bus Master UnitAUX*  Parallel Auxiliary Unit, no controlller160LMX(T)345LMX(T)E          Export version, ""E"" postfix360LMX(T)* Available on 140, 160, 345 & 360LMX models only",,
+Single Phase Models (T = Option),Three Phase Models (T = Option),AC Input Voltages (VIN)
+"",,
+"",,Options
+"",,
+"",,
+"",,
+"",,
+"",,
+"",,
+"",,
+"Single Phase Models (T = Option)Three Phase Models (T = Option)AC Input Voltages (VIN)105LMX(T)305LMX(T)Must be specified on order, see pages 8 & 9108LMX(T)308LMX(T)Options112LMX312LMX413     Option ""C"" Interharmonics Generator140LMX(T)320LMX(T)PB*     Parallel Bus Master UnitAUX*  Parallel Auxiliary Unit, no controlller160LMX(T)345LMX(T)E          Export version, ""E"" postfix360LMX(T)* Available on 140, 160, 345 & 360LMX models only"
+""
+"Single Phase Models (T = Option)Three Phase Models (T = Option)AC Input Voltages (VIN)105LMX(T)305LMX(T)Must be specified on order, see pages 8 & 9108LMX(T)308LMX(T)Options112LMX312LMX413     Option ""C"" Interharmonics Generator140LMX(T)320LMX(T)PB*     Parallel Bus Master UnitAUX*  Parallel Auxiliary Unit, no controlller160LMX(T)345LMX(T)E          Export version, ""E"" postfix360LMX(T)* Available on 140, 160, 345 & 360LMX models only"
+Three Phase Models (T = Option)
+"Single Phase Models (T = Option)Three Phase Models (T = Option)AC Input Voltages (VIN)105LMX(T)305LMX(T)Must be specified on order, see pages 8 & 9108LMX(T)308LMX(T)Options112LMX312LMX413     Option ""C"" Interharmonics Generator140LMX(T)320LMX(T)PB*     Parallel Bus Master UnitAUX*  Parallel Auxiliary Unit, no controlller160LMX(T)345LMX(T)E          Export version, ""E"" postfix360LMX(T)* Available on 140, 160, 345 & 360LMX models only"
+Single Phase Models (T = Option)
+"Single Phase Models (T = Option)Three Phase Models (T = Option)AC Input Voltages (VIN)105LMX(T)305LMX(T)Must be specified on order, see pages 8 & 9108LMX(T)308LMX(T)Options112LMX312LMX413     Option ""C"" Interharmonics Generator140LMX(T)320LMX(T)PB*     Parallel Bus Master UnitAUX*  Parallel Auxiliary Unit, no controlller160LMX(T)345LMX(T)E          Export version, ""E"" postfix360LMX(T)* Available on 140, 160, 345 & 360LMX models only"
+AC Input Voltages (VIN)
+"pnnLMXT-PBCE-CEx1 = Single PhaseCE_ = CE Mark option3 = Three Phase2 = 208-240Vinput05 = 500VA4 = 380-480Vinput08 = 750VAE = Export Version12 = 1200VADelete for non Export20 = 2000VAC = IEC413 Interharmonics Option40 = 4000VA45 = 4500VAPB = Parallel Bus.60 = 6000VAAUX = Auxiliary Parallel UnitT = Transformer OptionValid for 8U models only. Mutually exclusive.Delete for no T OptionDelete if not part a parallel system."
+""
+"pnnLMXT-PBCE-CEx1 = Single PhaseCE_ = CE Mark option3 = Three Phase2 = 208-240Vinput05 = 500VA4 = 380-480Vinput08 = 750VAE = Export Version12 = 1200VADelete for non Export20 = 2000VAC = IEC413 Interharmonics Option40 = 4000VA45 = 4500VAPB = Parallel Bus.60 = 6000VAAUX = Auxiliary Parallel UnitT = Transformer OptionValid for 8U models only. Mutually exclusive.Delete for no T OptionDelete if not part a parallel system."
+""
+"pnnLMXT-PBCE-CEx1 = Single PhaseCE_ = CE Mark option3 = Three Phase2 = 208-240Vinput05 = 500VA4 = 380-480Vinput08 = 750VAE = Export Version12 = 1200VADelete for non Export20 = 2000VAC = IEC413 Interharmonics Option40 = 4000VA45 = 4500VAPB = Parallel Bus.60 = 6000VAAUX = Auxiliary Parallel UnitT = Transformer OptionValid for 8U models only. Mutually exclusive.Delete for no T OptionDelete if not part a parallel system.",,,,,,,,
+p,nn,LMX,T,-,PB,C,E,-CEx
+"pnnLMXT-PBCE-CEx1 = Single PhaseCE_ = CE Mark option3 = Three Phase2 = 208-240Vinput05 = 500VA4 = 380-480Vinput08 = 750VAE = Export Version12 = 1200VADelete for non Export20 = 2000VAC = IEC413 Interharmonics Option40 = 4000VA45 = 4500VAPB = Parallel Bus.60 = 6000VAAUX = Auxiliary Parallel UnitT = Transformer OptionValid for 8U models only. Mutually exclusive.Delete for no T OptionDelete if not part a parallel system.",,,,,,,,
+p,nn,LMX,T,-,PB,C,E,-CEx
+"",,,,,,,,
+"",,,,,,,,
+"Windows 10 Software - 64 BitTest Sequences - Avionics2Test Sequences - Other2PPSC Studio Control SoftwareABD0100.1.8 - Airbus A380, AC Power GroupsIEC Test Suite - Includes IEC61000-4-PPSC Test ManagerABD0100.1.8.1 - Airbus A350, AC Power Groups11p, IEC61000-4-14, IEC61000-4-27p,AMD24C - Airbus A400M, AC Power GroupsIEC61000-4-28 and IEC61000-4-34pBoeing 787B3-0147 - B787, AC Power GroupsMIL-STD 1399-300B - US DoD, Ship-MIL-STD704 - US DoD, AC Power Groupsboard Power, AC Power GroupsRTCA-DO160 Section 16, AC Power Groups"
+""
+"Windows 10 Software - 64 BitTest Sequences - Avionics2Test Sequences - Other2PPSC Studio Control SoftwareABD0100.1.8 - Airbus A380, AC Power GroupsIEC Test Suite - Includes IEC61000-4-PPSC Test ManagerABD0100.1.8.1 - Airbus A350, AC Power Groups11p, IEC61000-4-14, IEC61000-4-27p,AMD24C - Airbus A400M, AC Power GroupsIEC61000-4-28 and IEC61000-4-34pBoeing 787B3-0147 - B787, AC Power GroupsMIL-STD 1399-300B - US DoD, Ship-MIL-STD704 - US DoD, AC Power Groupsboard Power, AC Power GroupsRTCA-DO160 Section 16, AC Power Groups"
+""
+"Windows 10 Software - 64 BitTest Sequences - Avionics2Test Sequences - Other2PPSC Studio Control SoftwareABD0100.1.8 - Airbus A380, AC Power GroupsIEC Test Suite - Includes IEC61000-4-PPSC Test ManagerABD0100.1.8.1 - Airbus A350, AC Power Groups11p, IEC61000-4-14, IEC61000-4-27p,AMD24C - Airbus A400M, AC Power GroupsIEC61000-4-28 and IEC61000-4-34pBoeing 787B3-0147 - B787, AC Power GroupsMIL-STD 1399-300B - US DoD, Ship-MIL-STD704 - US DoD, AC Power Groupsboard Power, AC Power GroupsRTCA-DO160 Section 16, AC Power Groups"
+""
+"Windows 10 Software - 64 BitTest Sequences - Avionics2Test Sequences - Other2PPSC Studio Control SoftwareABD0100.1.8 - Airbus A380, AC Power GroupsIEC Test Suite - Includes IEC61000-4-PPSC Test ManagerABD0100.1.8.1 - Airbus A350, AC Power Groups11p, IEC61000-4-14, IEC61000-4-27p,AMD24C - Airbus A400M, AC Power GroupsIEC61000-4-28 and IEC61000-4-34pBoeing 787B3-0147 - B787, AC Power GroupsMIL-STD 1399-300B - US DoD, Ship-MIL-STD704 - US DoD, AC Power Groupsboard Power, AC Power GroupsRTCA-DO160 Section 16, AC Power Groups"
+""
+"Windows 10 Software - 64 BitTest Sequences - Avionics2Test Sequences - Other2PPSC Studio Control SoftwareABD0100.1.8 - Airbus A380, AC Power GroupsIEC Test Suite - Includes IEC61000-4-PPSC Test ManagerABD0100.1.8.1 - Airbus A350, AC Power Groups11p, IEC61000-4-14, IEC61000-4-27p,AMD24C - Airbus A400M, AC Power GroupsIEC61000-4-28 and IEC61000-4-34pBoeing 787B3-0147 - B787, AC Power GroupsMIL-STD 1399-300B - US DoD, Ship-MIL-STD704 - US DoD, AC Power Groupsboard Power, AC Power GroupsRTCA-DO160 Section 16, AC Power Groups"
+""
+"Windows 10 Software - 64 BitTest Sequences - Avionics2Test Sequences - Other2PPSC Studio Control SoftwareABD0100.1.8 - Airbus A380, AC Power GroupsIEC Test Suite - Includes IEC61000-4-PPSC Test ManagerABD0100.1.8.1 - Airbus A350, AC Power Groups11p, IEC61000-4-14, IEC61000-4-27p,AMD24C - Airbus A400M, AC Power GroupsIEC61000-4-28 and IEC61000-4-34pBoeing 787B3-0147 - B787, AC Power GroupsMIL-STD 1399-300B - US DoD, Ship-MIL-STD704 - US DoD, AC Power Groupsboard Power, AC Power GroupsRTCA-DO160 Section 16, AC Power Groups"
+Test Sequences - Avionics2
+"Windows 10 Software - 64 BitTest Sequences - Avionics2Test Sequences - Other2PPSC Studio Control SoftwareABD0100.1.8 - Airbus A380, AC Power GroupsIEC Test Suite - Includes IEC61000-4-PPSC Test ManagerABD0100.1.8.1 - Airbus A350, AC Power Groups11p, IEC61000-4-14, IEC61000-4-27p,AMD24C - Airbus A400M, AC Power GroupsIEC61000-4-28 and IEC61000-4-34pBoeing 787B3-0147 - B787, AC Power GroupsMIL-STD 1399-300B - US DoD, Ship-MIL-STD704 - US DoD, AC Power Groupsboard Power, AC Power GroupsRTCA-DO160 Section 16, AC Power Groups"
+""
+"Windows 10 Software - 64 BitTest Sequences - Avionics2Test Sequences - Other2PPSC Studio Control SoftwareABD0100.1.8 - Airbus A380, AC Power GroupsIEC Test Suite - Includes IEC61000-4-PPSC Test ManagerABD0100.1.8.1 - Airbus A350, AC Power Groups11p, IEC61000-4-14, IEC61000-4-27p,AMD24C - Airbus A400M, AC Power GroupsIEC61000-4-28 and IEC61000-4-34pBoeing 787B3-0147 - B787, AC Power GroupsMIL-STD 1399-300B - US DoD, Ship-MIL-STD704 - US DoD, AC Power Groupsboard Power, AC Power GroupsRTCA-DO160 Section 16, AC Power Groups"
+""
+"Windows 10 Software - 64 BitTest Sequences - Avionics2Test Sequences - Other2PPSC Studio Control SoftwareABD0100.1.8 - Airbus A380, AC Power GroupsIEC Test Suite - Includes IEC61000-4-PPSC Test ManagerABD0100.1.8.1 - Airbus A350, AC Power Groups11p, IEC61000-4-14, IEC61000-4-27p,AMD24C - Airbus A400M, AC Power GroupsIEC61000-4-28 and IEC61000-4-34pBoeing 787B3-0147 - B787, AC Power GroupsMIL-STD 1399-300B - US DoD, Ship-MIL-STD704 - US DoD, AC Power Groupsboard Power, AC Power GroupsRTCA-DO160 Section 16, AC Power Groups"
+""
+"Windows 10 Software - 64 BitTest Sequences - Avionics2Test Sequences - Other2PPSC Studio Control SoftwareABD0100.1.8 - Airbus A380, AC Power GroupsIEC Test Suite - Includes IEC61000-4-PPSC Test ManagerABD0100.1.8.1 - Airbus A350, AC Power Groups11p, IEC61000-4-14, IEC61000-4-27p,AMD24C - Airbus A400M, AC Power GroupsIEC61000-4-28 and IEC61000-4-34pBoeing 787B3-0147 - B787, AC Power GroupsMIL-STD 1399-300B - US DoD, Ship-MIL-STD704 - US DoD, AC Power Groupsboard Power, AC Power GroupsRTCA-DO160 Section 16, AC Power Groups"
+""
+Software Options,,
+"Windows 10 Software - 64 BitTest Sequences - Avionics2Test Sequences - Other2PPSC Studio Control SoftwareABD0100.1.8 - Airbus A380, AC Power GroupsIEC Test Suite - Includes IEC61000-4-PPSC Test ManagerABD0100.1.8.1 - Airbus A350, AC Power Groups11p, IEC61000-4-14, IEC61000-4-27p,AMD24C - Airbus A400M, AC Power GroupsIEC61000-4-28 and IEC61000-4-34pBoeing 787B3-0147 - B787, AC Power GroupsMIL-STD 1399-300B - US DoD, Ship-MIL-STD704 - US DoD, AC Power Groupsboard Power, AC Power GroupsRTCA-DO160 Section 16, AC Power Groups",,
+Windows 10 Software - 64 Bit,Test Sequences - Avionics2,Test Sequences - Other2
+"",,
+"",,
+"",,
+"",,
+"",,
+"",,
+"Windows 10 Software - 64 BitTest Sequences - Avionics2Test Sequences - Other2PPSC Studio Control SoftwareABD0100.1.8 - Airbus A380, AC Power GroupsIEC Test Suite - Includes IEC61000-4-PPSC Test ManagerABD0100.1.8.1 - Airbus A350, AC Power Groups11p, IEC61000-4-14, IEC61000-4-27p,AMD24C - Airbus A400M, AC Power GroupsIEC61000-4-28 and IEC61000-4-34pBoeing 787B3-0147 - B787, AC Power GroupsMIL-STD 1399-300B - US DoD, Ship-MIL-STD704 - US DoD, AC Power Groupsboard Power, AC Power GroupsRTCA-DO160 Section 16, AC Power Groups"
+Windows 10 Software - 64 Bit
+"Windows 10 Software - 64 BitTest Sequences - Avionics2Test Sequences - Other2PPSC Studio Control SoftwareABD0100.1.8 - Airbus A380, AC Power GroupsIEC Test Suite - Includes IEC61000-4-PPSC Test ManagerABD0100.1.8.1 - Airbus A350, AC Power Groups11p, IEC61000-4-14, IEC61000-4-27p,AMD24C - Airbus A400M, AC Power GroupsIEC61000-4-28 and IEC61000-4-34pBoeing 787B3-0147 - B787, AC Power GroupsMIL-STD 1399-300B - US DoD, Ship-MIL-STD704 - US DoD, AC Power Groupsboard Power, AC Power GroupsRTCA-DO160 Section 16, AC Power Groups"
+Test Sequences - Other2
+"Windows 10 Software - 64 BitTest Sequences - Avionics2Test Sequences - Other2PPSC Studio Control SoftwareABD0100.1.8 - Airbus A380, AC Power GroupsIEC Test Suite - Includes IEC61000-4-PPSC Test ManagerABD0100.1.8.1 - Airbus A350, AC Power Groups11p, IEC61000-4-14, IEC61000-4-27p,AMD24C - Airbus A400M, AC Power GroupsIEC61000-4-28 and IEC61000-4-34pBoeing 787B3-0147 - B787, AC Power GroupsMIL-STD 1399-300B - US DoD, Ship-MIL-STD704 - US DoD, AC Power Groupsboard Power, AC Power GroupsRTCA-DO160 Section 16, AC Power Groups"
+""
+""
+Proudly Represented by:

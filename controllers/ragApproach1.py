@@ -10,8 +10,6 @@ from utils.tracker import store_object, fetch_object
 from utils.modelSettings import generation_config, safety_settings
 from utils.modelInstructions import (
     answer_retriever_instruction,
-    image_retriever_instruction,
-    context_retriever_instruction,
 )
 from utils.geminiUtils import GeminiUtils
 from controllers import processPdf
@@ -123,20 +121,8 @@ class ragApproach1:
                 part.text for response in responses for part in response.parts if hasattr(part, 'text')]
             answer = " ".join(all_responses).replace(
                 "``` html", "", 1).replace("\n```", "", 1)
-            # Retrieve image paths related to the relevant pages
-            all_image_paths = self.get_images(relevant_pages=context_page_info)
-            image_data = {}
-            if all_image_paths:
-                # Call image model for analysis
-                image_session = self.call_image_model(
-                    context=answer, all_image_paths=all_image_paths)
-                if image_session:
-                    image_response = image_session.send_message("Analyse")
-                    # Create HTML content with images based on the AI response
-                    image_data = self.create_json_with_image_data(
-                        answer, image_response)
 
-            return answer, image_data
+            return answer
         except Exception as e:
             print(f"An error occurred: {e}")
             return "An error occurred while processing the request."
@@ -152,45 +138,45 @@ class ragApproach1:
             - call_image_context_model() - calls the image context model for analysis, uses the "gemini-1.5-flash"
     """
 
-    def get_image_context(self, question, similar_image_path, chat_history):
-        try:
-            # Split the remaining part of the name to extract the pdf_base_name and page_number
-            parts = similar_image_path.split('_')
-            directories = parts[0].split('/')
+    # def get_image_context(self, question, similar_image_path, chat_history):
+    #     try:
+    #         # Split the remaining part of the name to extract the pdf_base_name and page_number
+    #         parts = similar_image_path.split('_')
+    #         directories = parts[0].split('/')
 
-            # Join all parts except the last three
-            pdf_base_name = directories[-2]
-            # The second last part is the page number
-            page_number = int(parts[-2])
+    #         # Join all parts except the last three
+    #         pdf_base_name = directories[-2]
+    #         # The second last part is the page number
+    #         page_number = int(parts[-2])
 
-            relevant_page_numbers = [
-                pg_no for pg_no in range(page_number-1, page_number+2) if pg_no >= 0]
+    #         relevant_page_numbers = [
+    #             pg_no for pg_no in range(page_number-1, page_number+2) if pg_no >= 0]
 
-            # Retrieve contexts for the question
-            relevant_text = self.retrieve_relevant_context(
-                relevant_page_numbers, pdf_base_name)
+    #         # Retrieve contexts for the question
+    #         relevant_text = self.retrieve_relevant_context(
+    #             relevant_page_numbers, pdf_base_name)
 
-            context_ai_session = self.call_image_context_model(context=relevant_text, all_image_paths=[
-                similar_image_path])
+    #         context_ai_session = self.call_image_context_model(context=relevant_text, all_image_paths=[
+    #             similar_image_path])
 
-            if not context_ai_session:
-                return "Failed to initialize chat session."
-            # Generate responses from the chat session
-            responses = context_ai_session.send_message("Analyse", stream=True)
-            responses.resolve()
+    #         if not context_ai_session:
+    #             return "Failed to initialize chat session."
+    #         # Generate responses from the chat session
+    #         responses = context_ai_session.send_message("Analyse", stream=True)
+    #         responses.resolve()
 
-            all_responses = [
-                part.text for response in responses for part in response.parts if hasattr(part, 'text')]
-            answer = " ".join(all_responses).replace(
-                "``` html", "", 1).replace("\n```", "", 1)
+    #         all_responses = [
+    #             part.text for response in responses for part in response.parts if hasattr(part, 'text')]
+    #         answer = " ".join(all_responses).replace(
+    #             "``` html", "", 1).replace("\n```", "", 1)
 
-            image_data = {similar_image_path: "Uploaded Image"}
+    #         image_data = {similar_image_path: "Uploaded Image"}
 
-            return answer, image_data
+    #         return answer, image_data
 
-        except Exception as e:
-            print(f"An error occurred: {e}")
-            return "An error occurred while processing the request."
+    #     except Exception as e:
+    #         print(f"An error occurred: {e}")
+    #         return "An error occurred while processing the request."
 
     def initialize_embeddings(self):
         """
@@ -224,203 +210,7 @@ class ragApproach1:
             print(e)
             return None
 
-    def initialize_image_ai(self, history):
-        """
-        Initialize the generative AI model for multi-modal (text and image) interactions.
-
-        Args:
-            history (list): List of chat history.
-
-        Returns:
-            GenerativeModel: Initialized generative model for image chat interactions.
-        """
-        try:
-            if self.vision_model is None:
-                self.vision_model = genai.GenerativeModel(
-                    model_name=name_constants["MULTI_MODAL_MODEL"],
-                    safety_settings=safety_settings,
-                    generation_config=generation_config,
-                    system_instruction=image_retriever_instruction,
-                )
-            return self.vision_model.start_chat(history=history)
-        except Exception as e:
-            print(e)
-            return None
-
-    def initialize_image_context_ai(self, history):
-        """
-        Initialize the generative AI model for multi-modal (text and image) interactions.
-
-        Args:
-            history (list): List of chat history.
-
-        Returns:
-            GenerativeModel: Initialized generative model for image chat interactions.
-        """
-        try:
-            if self.vision_context_model is None:
-                self.vision_context_model = genai.GenerativeModel(
-                    model_name=name_constants["MULTI_MODAL_MODEL"],
-                    safety_settings=safety_settings,
-                    generation_config=generation_config,
-                    system_instruction=context_retriever_instruction,
-                )
-            return self.vision_context_model.start_chat(history=history)
-        except Exception as e:
-            print(e)
-            return None
-
-    def get_images(self, relevant_pages):
-        """
-        Retrieve paths to images related to the relevant pages.
-
-        Args:
-            relevant_pages (list): List of relevant pages.
-
-        Returns:
-            list: List of image paths.
-        """
-        all_image_paths = []
-        processed_pages = set()
-        for page_info in relevant_pages:
-            pdf_name = page_info['doc_name']
-            page_num = page_info['page_num']
-            if page_num not in processed_pages:
-                pdf_base_name = os.path.splitext(os.path.basename(pdf_name))[0]
-                pattern = f"assets/Images/{pdf_base_name}/{pdf_base_name}_image_{page_num}_*.jpg"
-                matched_files = glob.glob(pattern)
-                all_image_paths.extend(matched_files)
-                processed_pages.add(page_num)
-        return all_image_paths
-
-    def upload_to_gemini(self, path, mime_type="image/jpeg"):
-        """
-        Upload images to Gemini and store the results.
-
-        Args:
-            path (str): Path to the image.
-            mime_type (str): MIME type of the image.
-
-        Returns:
-            object: Uploaded file object.
-        """
-        file = fetch_object(path)
-        if file:
-            return file
-        else:
-            file = genai.upload_file(path, mime_type=mime_type)
-            store_object(file)
-            return file
-
-    def call_image_model(self, context, all_image_paths):
-        """
-        Use the image model to analyze images related to the answer.
-
-        Args:
-            question (str): The user's question.
-            answer (str): The generated answer.
-            all_image_paths (list): List of image paths.
-
-        Returns:
-            GenerativeModel: Chat session initialized for image analysis.
-        """
-        try:
-            uploaded_images = []
-            geminiUtils = GeminiUtils()
-
-            # Upload each image and collect the drive links
-            for image_path in all_image_paths:
-                # Assume all images are .jpg
-                mime_type = "image/jpeg"
-                drive_link = geminiUtils.upload_to_gemini(
-                    image_path, mime_type=mime_type)
-                uploaded_images.append((image_path, drive_link))
-
-            # Prepare the chat session history
-            history_parts = [f"CONTEXT: {context}"]
-            for image_path, drive_link in uploaded_images:
-                history_parts.extend([image_path, drive_link])
-
-            chat_history = [
-                {
-                    "role": "user",
-                    "parts": history_parts,
-                },
-            ]
-
-            chat_session_image = self.initialize_image_ai(
-                history=chat_history)
-            return chat_session_image
-
-        except Exception as e:
-            print(e)
-            return None
-
-    def call_image_context_model(self, context, all_image_paths):
-        """
-        Use the image model to analyze images related to the answer.
-
-        Args:
-            question (str): The user's question.
-            answer (str): The generated answer.
-            all_image_paths (list): List of image paths.
-
-        Returns:
-            GenerativeModel: Chat session initialized for image analysis.
-        """
-        try:
-            uploaded_images = []
-            geminiUtils = GeminiUtils()
-
-            # Upload each image and collect the drive links
-            for image_path in all_image_paths:
-                # Assume all images are .jpg
-                mime_type = "image/jpeg"
-                drive_link = geminiUtils.upload_to_gemini(
-                    image_path, mime_type=mime_type)
-                uploaded_images.append((image_path, drive_link))
-
-            # Prepare the chat session history
-            history_parts = [f"CONTEXT: {context}"]
-            for image_path, drive_link in uploaded_images:
-                history_parts.extend([image_path, drive_link])
-
-            chat_history = [
-                {
-                    "role": "user",
-                    "parts": history_parts,
-                },
-            ]
-
-            chat_session_context = self.initialize_image_context_ai(
-                history=chat_history)
-            return chat_session_context
-
-        except Exception as e:
-            print(e)
-            return None
-
-    def create_json_with_image_data(self, html_content, image_response):
-        """
-        Create HTML content with images based on the AI response.
-
-        Args:
-            html_content (str): Initial HTML content.
-            image_response (list): AI response containing image data.
-
-        Returns:
-            dict: Image data extracted from the response.
-        """
-        try:
-            response_texts = [
-                part.text for response in image_response for part in response.parts if hasattr(part, 'text')]
-            combined_response_text = " ".join(response_texts)
-            image_data = json.loads(combined_response_text)
-            return image_data
-        except Exception as e:
-            print(f"Error processing image response: {e}")
-            return html_content
-
+    
     def retrieve_contexts(self, question):
         """
         Retrieve contexts related to the given question from the vector stores.
