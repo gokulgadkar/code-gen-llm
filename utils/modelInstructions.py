@@ -18,10 +18,18 @@ answer_csv_retriever_instruction = """
     1. Specification Name (e.g., Pixel Size)
     2. Value from Document 1
     3. Value from Document 2
-    
+    make sure all the specifications should be listed 
     When a specification exists in both documents but has different values, show both values. If a specification is present in one document but missing in the other, indicate it as "N/A" in the missing column.
-    
+    Try to find the missing specification before mentioning N/A and avoid its usage .
     Return the table in markdown format so it can easily be converted to CSV later. Highlight any factual differences in your answer by showing the document name and page number of where the specification was found.
+    ouput should be two tables 
+    one long table with all the differences.
+    second table should give the difference between the registor data from both the documents in the following format :
+    Register value | register number | default value | programmed value | actual value 
+    
+    hence the output should have only 2 tables 
+    
+    specification and register contents 
     
     If a specification is ambiguous, or the information is absent, mention it in the response and ask follow-up questions if needed to clarify the user's query. Ensure the response is under 400 characters.
 """
