@@ -5,27 +5,21 @@ import time
 import tempfile
 import numpy as np
 import csv
+import streamlit as st
 
 import tabula
-# from PIL import Image
 from PyPDF2 import PdfReader
 from pypdf import PdfReader as ImageReader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.docstore.document import Document
 
-# import mediapipe as mp
-# from mediapipe.tasks import python
-# from mediapipe.tasks.python import vision
-
 import google.generativeai as genai
 
 from utils.modelSettings import generation_config, safety_settings
-# from utils.modelInstructions import image_retriever_instruction
 from utils.geminiUtils import GeminiUtils
 
 # Configure the API key for Google Generative AI
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-
 
 class PDFprocessor:
     """
@@ -43,14 +37,6 @@ class PDFprocessor:
         self.pdf_docs = pdf_docs
         self.pdf_names = pdf_names
 
-    """
-        MAIN FUNCTION 1 : parse_pdf()
-        - Parses PDF for text, converts texts to chunks
-        - Uses functions listed below:
-            - get_pdf_text()
-            - get_text_chunks()
-    """
-
     def parse_pdf(self):
         """
         Parses the PDF to get text and then splits it into chunks.
@@ -63,42 +49,51 @@ class PDFprocessor:
             text_with_metadata, type="text", csv_name="")
         return chunks
 
-    """
-        MAIN FUNCTION 2 : get_tables()
-        - Parses PDF for tables, converts all tables to csv and then to chunks
-        - Uses functions listed below:
-            - get_csv_string()
-            - filter_csv()
-            - get_text_chunks()
-    """
-
     def get_tables(self):
         """
         Extracts tables from the PDFs and splits them into chunks.
-
+    
         Returns:
-            list: List of text chunks from tables.
+            list: List of text chunks from tables across all PDFs.
         """
         csv_chunks = []
+        
+        # Directory to store intermediate CSV files
+        base_output_dir = "context_docs"
+        if not os.path.exists(base_output_dir):
+            os.makedirs(base_output_dir)
+        
         for pdf, pdf_name in zip(self.pdf_docs, self.pdf_names):
-            tabula.convert_into(pdf, "context_docs/output.csv",
-                                output_format="csv", pages="all", lattice=True)
-
-            self.filter_csv("context_docs/output.csv",
-                            "context_docs/output_filtered.csv")
-
-            csv_string = self.get_csv_string(
-                "context_docs/output_filtered.csv")
-            csv_chunks.extend(self.get_text_chunks(
-                text_with_metadata=csv_string, type="csv", csv_name=pdf_name))
+            try:
+                # Create unique CSV file names for each PDF
+                output_csv_path = os.path.join(base_output_dir, f"{pdf_name}_output.csv")
+                filtered_csv_path = os.path.join(base_output_dir, f"{pdf_name}_output_filtered.csv")
+                
+                # Extract tables from the PDF into a CSV file
+                tabula.convert_into(pdf, output_csv_path, output_format="csv", pages="all", lattice=True)
+    
+                # Filter the extracted CSV file
+                self.filter_csv(output_csv_path, filtered_csv_path)
+    
+                # Convert filtered CSV into a string
+                csv_string = self.get_csv_string(filtered_csv_path)
+    
+                # Split the CSV string into chunks
+                csv_chunks.extend(self.get_text_chunks(
+                    text_with_metadata=csv_string, type="csv", csv_name=pdf_name))
+            except Exception as e:
+                # Log the error and continue processing other PDFs
+                st.error(f"Error processing tables from {pdf_name}: {e}")
+                continue
+            finally:
+                # Optionally: Clean up the temporary CSV files if no longer needed
+                if os.path.exists(output_csv_path):
+                    os.remove(output_csv_path)
+                if os.path.exists(filtered_csv_path):
+                    os.remove(filtered_csv_path)
+    
         return csv_chunks
 
-    """
-        MAIN FUNCTION 3 : extract_images()
-        - Parses PDF for all images, stores them in proper folders
-    """
-
-    
     def get_pdf_text(self):
         """
         Extracts text from each page of the PDF with page numbers.
@@ -167,11 +162,11 @@ class PDFprocessor:
             output_csv_path (str): Path to the output filtered CSV file.
         """
         try:
-            with open(input_csv_path, 'r') as file:
+            with open(input_csv_path, 'r', encoding='utf-8', errors='replace') as file:
                 reader = csv.reader(file)
                 rows = list(reader)
 
-            with open(output_csv_path, 'w', newline='') as file:
+            with open(output_csv_path, 'w', newline='', encoding='utf-8') as file:
                 writer = csv.writer(file)
                 for row in rows:
                     if sum(1 for column in row if column.strip()) <= 2:
@@ -193,7 +188,7 @@ class PDFprocessor:
         """
         try:
             bigstring = []
-            with open(input_csv_path, 'r') as f:
+            with open(input_csv_path, 'r', encoding='utf-8') as f:
                 lines = f.readlines()
                 smallstring = ""
                 for line in lines:
@@ -209,7 +204,6 @@ class PDFprocessor:
             return bigstring_str
         except Exception as e:
             raise RuntimeError(f"Error getting CSV string: {e}")
-
 
     def get_relevant_text(self, pdf_base_name, relevant_page_numbers):
         """

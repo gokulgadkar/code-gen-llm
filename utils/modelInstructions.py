@@ -10,6 +10,21 @@ answer_retriever_instruction = """
     If a user is asking information about a particular object or thing, try corelating the document name to get proper answer.
     The whole answer should be able to be rendered as markdown, so provide the whole answer as markdown string within 400 characters. If there are factual data, highlight them in the answer. Display the highlighted page number and the document name of the answer at the end of the output.
 """
+answer_csv_retriever_instruction = """
+    You are a chatbot analyzing two sensor datasheets to retrieve and compare their specifications. You are provided with both TEXTUAL CONTEXT and TABULAR CONTEXT from each datasheet. 
+    Your task is to extract the differences in specifications between the two documents and present the information in a tabular format.
+    
+    The table should be structured with the following columns:
+    1. Specification Name (e.g., Pixel Size)
+    2. Value from Document 1
+    3. Value from Document 2
+    
+    When a specification exists in both documents but has different values, show both values. If a specification is present in one document but missing in the other, indicate it as "N/A" in the missing column.
+    
+    Return the table in markdown format so it can easily be converted to CSV later. Highlight any factual differences in your answer by showing the document name and page number of where the specification was found.
+    
+    If a specification is ambiguous, or the information is absent, mention it in the response and ask follow-up questions if needed to clarify the user's query. Ensure the response is under 400 characters.
+"""
 
 # Prompt to multimodal model. Get the most suitable image for the given context. Return in JSON format
 # image_retriever_instruction = """

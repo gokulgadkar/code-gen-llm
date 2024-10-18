@@ -2,6 +2,8 @@ import os
 import glob
 import json
 
+# reg no /name , default value , from the driver code 
+
 import google.generativeai as genai
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores.faiss import FAISS
@@ -10,6 +12,8 @@ from utils.tracker import store_object, fetch_object
 from utils.modelSettings import generation_config, safety_settings
 from utils.modelInstructions import (
     answer_retriever_instruction,
+    answer_csv_retriever_instruction
+    
 )
 from utils.geminiUtils import GeminiUtils
 from controllers import processPdf
@@ -91,6 +95,29 @@ class ragApproach1:
             - create_json_with_image_data() - creates JSON object with image path and caption of relevant image
         
     """
+    def append_to_vector_store(self):
+          """
+          Append the new document and CSV embeddings to the existing vector store.
+          Returns:
+              bool: True if the stores were updated and saved successfully, None otherwise.
+          """
+          try:
+              # Load the existing vector stores for text and CSV embeddings
+              store = FAISS.load_local(name_constants["TEXT_EMBEDDING_STORE"], self.embeddings)
+              csv_store = FAISS.load_local(name_constants["CSV_EMBEDDING_STORE"], self.embeddings)
+      
+              # Append the new documents and CSV chunks to the existing stores
+              store.add_documents(self.chunks)
+              csv_store.add_documents(self.csv_chunks)
+      
+              # Save the updated vector stores locally
+              store.save_local(name_constants["TEXT_EMBEDDING_STORE"])
+              csv_store.save_local(name_constants["CSV_EMBEDDING_STORE"])
+      
+              return True
+          except Exception as e:
+              print(e)
+              return None
 
     def get_answer_for_text_query(self, question, chat_history):
         """
@@ -203,7 +230,7 @@ class ragApproach1:
                     model_name=name_constants["LLM_TEXT_MODEL"],
                     safety_settings=safety_settings,
                     generation_config=generation_config,
-                    system_instruction=answer_retriever_instruction
+                    system_instruction=answer_csv_retriever_instruction    
                 )
             return self.model.start_chat(history=chat_history)
         except Exception as e:
