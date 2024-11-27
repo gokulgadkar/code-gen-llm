@@ -5,7 +5,6 @@ import time
 import tempfile
 import numpy as np
 import csv
-import streamlit as st
 
 import tabula
 from PyPDF2 import PdfReader
@@ -82,8 +81,6 @@ class PDFprocessor:
                 csv_chunks.extend(self.get_text_chunks(
                     text_with_metadata=csv_string, type="csv", csv_name=pdf_name))
             except Exception as e:
-                # Log the error and continue processing other PDFs
-                st.error(f"Error processing tables from {pdf_name}: {e}")
                 continue
             finally:
                 # Optionally: Clean up the temporary CSV files if no longer needed
@@ -129,8 +126,8 @@ class PDFprocessor:
         try:
             text_splitter = CharacterTextSplitter(
                 separator="\n",
-                chunk_size=1000,
-                chunk_overlap=100,
+                chunk_size=2000,
+                chunk_overlap=200,
                 length_function=len
             )
             if type == "csv":
@@ -162,11 +159,11 @@ class PDFprocessor:
             output_csv_path (str): Path to the output filtered CSV file.
         """
         try:
-            with open(input_csv_path, 'r', encoding='utf-8', errors='replace') as file:
+            with open(input_csv_path, 'r', errors='replace') as file:
                 reader = csv.reader(file)
                 rows = list(reader)
 
-            with open(output_csv_path, 'w', newline='', encoding='utf-8') as file:
+            with open(output_csv_path, 'w', newline='') as file:
                 writer = csv.writer(file)
                 for row in rows:
                     if sum(1 for column in row if column.strip()) <= 2:
@@ -188,7 +185,7 @@ class PDFprocessor:
         """
         try:
             bigstring = []
-            with open(input_csv_path, 'r', encoding='utf-8') as f:
+            with open(input_csv_path, 'r') as f:
                 lines = f.readlines()
                 smallstring = ""
                 for line in lines:

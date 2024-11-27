@@ -11,8 +11,7 @@ from langchain_community.vectorstores.faiss import FAISS
 from utils.tracker import store_object, fetch_object
 from utils.modelSettings import generation_config, safety_settings
 from utils.modelInstructions import (
-    answer_retriever_instruction,
-    answer_csv_retriever_instruction
+    answer_retriever_instruction
     
 )
 from utils.geminiUtils import GeminiUtils
@@ -27,7 +26,9 @@ name_constants = {
     "LLM_TEXT_MODEL": "gemini-1.5-flash-latest",
     "MULTI_MODAL_MODEL": "gemini-1.5-flash-latest",
     "TEXT_EMBEDDING_STORE": "faiss_db/faiss_index",
-    "CSV_EMBEDDING_STORE": "faiss_db/csv_faiss_index"
+    "CSV_EMBEDDING_STORE": "faiss_db/csv_faiss_index",
+    "TEXT_EMBEDDING_STORE2": "faiss_db/faiss_index2",
+    "CSV_EMBEDDING_STORE2": "faiss_db/csv_faiss_index2"
 }
 
 
@@ -103,23 +104,19 @@ class ragApproach1:
           """
           try:
               # Load the existing vector stores for text and CSV embeddings
-              store = FAISS.load_local(name_constants["TEXT_EMBEDDING_STORE"], self.embeddings)
-              csv_store = FAISS.load_local(name_constants["CSV_EMBEDDING_STORE"], self.embeddings)
-      
-              # Append the new documents and CSV chunks to the existing stores
-              store.add_documents(self.chunks)
-              csv_store.add_documents(self.csv_chunks)
-      
-              # Save the updated vector stores locally
-              store.save_local(name_constants["TEXT_EMBEDDING_STORE"])
-              csv_store.save_local(name_constants["CSV_EMBEDDING_STORE"])
-      
-              return True
-          except Exception as e:
-              print(e)
-              return None
+            store = FAISS.from_documents(self.chunks, self.embeddings)
+            csv_store = FAISS.from_documents(self.csv_chunks, self.embeddings)
 
-    def get_answer_for_text_query(self, question, chat_history):
+            # Save vector stores locally
+            store.save_local(name_constants["TEXT_EMBEDDING_STORE2"])
+            csv_store.save_local(name_constants["CSV_EMBEDDING_STORE2"])
+      
+            return True
+          except Exception as e:
+            print(e)
+            return None
+
+    def get_answer_for_text_query(self, question):
         """
         Generate an answer to the question using the AI model, including images if available.
 
@@ -131,28 +128,90 @@ class ragApproach1:
             tuple: Generated answer and image data.
         """
         try:
-            # Retrieve contexts for the question
-            combined_context, csv_combine_context, context_page_info = self.retrieve_contexts(
-                question)
-            # Append formatted context to chat history
-            chat_history.append(self.format_message_with_context(
-                combined_context, csv_combine_context))
-            # Initialize generative AI model for text interactions
-            chat_session = self.initialize_gen_ai(chat_history)
-            if not chat_session:
-                return "Failed to initialize chat session."
-            # Generate responses from the chat session
-            responses = chat_session.send_message(question, stream=True)
-            responses.resolve()
-            all_responses = [
-                part.text for response in responses for part in response.parts if hasattr(part, 'text')]
-            answer = " ".join(all_responses).replace(
-                "``` html", "", 1).replace("\n```", "", 1)
 
-            return answer
+            answers =[]
+            que_ext = " Make a table, extract register values"
+
+            for que in question: 
+                # Retrieve contexts for the question
+                combined_context, csv_combine_context, context_page_info = self.retrieve_contexts(
+                    question, name_constants["TEXT_EMBEDDING_STORE"], name_constants["CSV_EMBEDDING_STORE"])
+                chat_session = self.initialize_gen_ai(                
+                    [
+                        {
+                        "role": "user",
+                        "parts": [
+                            self.format_message_with_context(combined_context, csv_combine_context ),
+                            que + que_ext,
+                        ],
+                        }
+                    ])
+                if not chat_session:
+                    return "Failed to initialize chat session."
+                # Generate responses from the chat session
+                responses = chat_session.send_message(question, stream=True)
+                responses.resolve()
+                all_responses = [
+                    part.text for response in responses for part in response.parts if hasattr(part, 'text')]
+                answer = " ".join(all_responses).replace(
+                    "``` html", "", 1).replace("\n```", "", 1)
+                answers.append(answer)
+
+            return answers
         except Exception as e:
             print(f"An error occurred: {e}")
             return "An error occurred while processing the request."
+
+
+
+
+    def get_answer_for_text_query2(self, question):
+        """
+        Generate an answer to the question using the AI model, including images if available.
+
+        Args:
+            question (str): The user's question.
+            chat_history (list): List of chat history.
+
+        Returns:
+            tuple: Generated answer and image data.
+        """
+        try:
+
+            answers =[]
+            que_ext = " Make a table, extract register values"
+
+            for que in question: 
+                # Retrieve contexts for the question
+                combined_context, csv_combine_context, context_page_info = self.retrieve_contexts(
+                    question, name_constants["TEXT_EMBEDDING_STORE2"], name_constants["CSV_EMBEDDING_STORE2"])
+
+                chat_session = self.initialize_gen_ai(                
+                    [
+                        {
+                        "role": "user",
+                        "parts": [
+                            self.format_message_with_context(combined_context, csv_combine_context ),
+                            que + que_ext,
+                        ],
+                        }
+                    ])
+                if not chat_session:
+                    return "Failed to initialize chat session."
+                # Generate responses from the chat session
+                responses = chat_session.send_message(question, stream=True)
+                responses.resolve()
+                all_responses = [
+                    part.text for response in responses for part in response.parts if hasattr(part, 'text')]
+                answer = " ".join(all_responses).replace(
+                    "``` html", "", 1).replace("\n```", "", 1)
+                answers.append(answer)
+
+            return answers
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            return "An error occurred while processing the request."
+            
 
     """
         MAIN FUNCTION 3 : get_answer_for_text_query()
@@ -165,45 +224,6 @@ class ragApproach1:
             - call_image_context_model() - calls the image context model for analysis, uses the "gemini-1.5-flash"
     """
 
-    # def get_image_context(self, question, similar_image_path, chat_history):
-    #     try:
-    #         # Split the remaining part of the name to extract the pdf_base_name and page_number
-    #         parts = similar_image_path.split('_')
-    #         directories = parts[0].split('/')
-
-    #         # Join all parts except the last three
-    #         pdf_base_name = directories[-2]
-    #         # The second last part is the page number
-    #         page_number = int(parts[-2])
-
-    #         relevant_page_numbers = [
-    #             pg_no for pg_no in range(page_number-1, page_number+2) if pg_no >= 0]
-
-    #         # Retrieve contexts for the question
-    #         relevant_text = self.retrieve_relevant_context(
-    #             relevant_page_numbers, pdf_base_name)
-
-    #         context_ai_session = self.call_image_context_model(context=relevant_text, all_image_paths=[
-    #             similar_image_path])
-
-    #         if not context_ai_session:
-    #             return "Failed to initialize chat session."
-    #         # Generate responses from the chat session
-    #         responses = context_ai_session.send_message("Analyse", stream=True)
-    #         responses.resolve()
-
-    #         all_responses = [
-    #             part.text for response in responses for part in response.parts if hasattr(part, 'text')]
-    #         answer = " ".join(all_responses).replace(
-    #             "``` html", "", 1).replace("\n```", "", 1)
-
-    #         image_data = {similar_image_path: "Uploaded Image"}
-
-    #         return answer, image_data
-
-    #     except Exception as e:
-    #         print(f"An error occurred: {e}")
-    #         return "An error occurred while processing the request."
 
     def initialize_embeddings(self):
         """
@@ -230,7 +250,7 @@ class ragApproach1:
                     model_name=name_constants["LLM_TEXT_MODEL"],
                     safety_settings=safety_settings,
                     generation_config=generation_config,
-                    system_instruction=answer_csv_retriever_instruction    
+                    system_instruction=answer_retriever_instruction    
                 )
             return self.model.start_chat(history=chat_history)
         except Exception as e:
@@ -238,7 +258,7 @@ class ragApproach1:
             return None
 
     
-    def retrieve_contexts(self, question):
+    def retrieve_contexts(self, question, textConstant, csvConstant):
         """
         Retrieve contexts related to the given question from the vector stores.
 
@@ -248,14 +268,15 @@ class ragApproach1:
         Returns:
             tuple: Combined context, combined CSV context, and context page information.
         """
+        
         store = FAISS.load_local(
-            name_constants["TEXT_EMBEDDING_STORE"], self.embeddings)
+            textConstant, self.embeddings)
         csv_store = FAISS.load_local(
-            name_constants["CSV_EMBEDDING_STORE"], self.embeddings)
+            csvConstant, self.embeddings)
 
         # Retrieve relevant documents
         context_documents = store.similarity_search(question, k=5)
-        context_csv_docs = csv_store.similarity_search(question, k=4)
+        context_csv_docs = csv_store.similarity_search(question, k=10)
 
         # Format the retrieved documents
         context_page_info = [
@@ -312,7 +333,5 @@ class ragApproach1:
         Returns:
             dict: Formatted message.
         """
-        return {
-            "role": "user",
-            "parts": [f"TEXTUAL CONTEXT: {combined_context}\nTABULAR CONTEXT: {csv_combine_context}"]
-        }
+        return f"CONTEXT: {combined_context} \n\n CONTEXT(csv) {csv_combine_context}"
+        
